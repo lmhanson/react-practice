@@ -1,0 +1,21 @@
+.header{
+    display: flex;
+    padding: 15px 20px;
+}
+
+.bi-list-nested{
+    font-size:x-large;
+    background-color: bisque;
+}
+
+.dropDown-content > h3{
+    opacity: 0;
+    visibility:hidden;
+}
+
+.bi-list-nested:hover > .dropDown-content > h3{
+    opacity: 1;
+    visibility: visible;
+    background-color: rgb(51, 137, 218);
+    transition: 1s;
+}
