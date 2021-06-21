@@ -5,17 +5,22 @@
 
 .bi-list-nested{
     font-size:x-large;
-    background-color: bisque;
 }
 
-.dropDown-content > h3{
-    opacity: 0;
-    visibility:hidden;
+.bi-list-nested:hover{
+    background-color: rgb(233, 233, 233);
 }
 
-.bi-list-nested:hover > .dropDown-content > h3{
-    opacity: 1;
-    visibility: visible;
-    background-color: rgb(51, 137, 218);
-    transition: 1s;
+.dropDown-content{
+    max-height: 0px;
+    max-width: 0px;
+    overflow: hidden;    
+    transition: max-width 0.5s  ,max-height 0.5s ;
+
+}
+
+.bi-list-nested:hover > .dropDown-content{
+    background-color: rgb(233, 233, 233);
+    max-height: 500px;
+    max-width: 500px;
 }
