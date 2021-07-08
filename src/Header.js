@@ -3,23 +3,28 @@ import './Header.css';
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 function Header(){
-  //const [click, setClick] = useState(false);
-  //const handleClick = () => setClick(!click)
+
+  const [widths, setwidth] = useState(0);
 
     return (
       <div className="header">
-        <div className="dropDown">
-          <i className="bi bi-list-nested">
-          <div className="dropDown-content">
-            <h3>kenny on99</h3>
-            <h3>tpk on99</h3>
-            <h3>kay on99</h3>
-            <h3>all on99</h3>
-          </div>
-          </i>
+
+        <div class="dropDown-content" style={{width:widths}}>
+          <i class="bi bi-x-lg" onClick={() => setwidth(widths-250)} ></i>
+          <a href="#">Test1</a>
+          <a href="#">Test2</a>
+          <a href="#">Test3</a>
+          <a href="#">Test4</a>
         </div>
+
+        <div className="dropDown" onClick={ () => setwidth(widths+250)}>
+          <i className="bi bi-list-nested"> Click Me </i>
+        </div>
+        
       </div>  
     );
 }
+
+
 
 export default Header;

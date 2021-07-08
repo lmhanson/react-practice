@@ -1,7 +1,4 @@
-.header{
-    display: flex;
-    padding: 15px 20px;
-}
+
 
 .bi-list-nested{
     font-size:x-large;
@@ -12,15 +9,42 @@
 }
 
 .dropDown-content{
-    max-height: 0px;
-    max-width: 0px;
-    overflow: hidden;    
-    transition: max-width 0.5s  ,max-height 0.5s ;
-
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: black;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    
 }
 
-.bi-list-nested:hover > .dropDown-content{
-    background-color: rgb(233, 233, 233);
-    max-height: 500px;
-    max-width: 500px;
+.dropDown-content i{
+    color:white;
+    padding-left: 200px;
 }
+
+.dropDown-content i:hover{
+    color:grey;
+    transition: 0.3s;
+}
+
+
+.dropDown-content a{
+    padding: 8px 8px 8px 82px;
+    text-decoration: none;
+    font-size: 25px;
+    display: block;
+    transition: 0.3s;
+    color:white;
+}
+
+.dropDown-content > a:hover{
+    color: grey;
+}
+
+
+
