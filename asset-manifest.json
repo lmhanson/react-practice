@@ -1,27 +1,26 @@
 {
   "files": {
-    "main.css": "/react-practice/static/css/main.63abde7c.chunk.css",
-    "main.js": "/react-practice/static/js/main.0021ebf5.chunk.js",
-    "main.js.map": "/react-practice/static/js/main.0021ebf5.chunk.js.map",
-    "runtime-main.js": "/react-practice/static/js/runtime-main.06de5216.js",
-    "runtime-main.js.map": "/react-practice/static/js/runtime-main.06de5216.js.map",
+    "main.css": "/react-practice/static/css/main.aeeafd57.chunk.css",
+    "main.js": "/react-practice/static/js/main.9ab18c4b.chunk.js",
+    "main.js.map": "/react-practice/static/js/main.9ab18c4b.chunk.js.map",
+    "runtime-main.js": "/react-practice/static/js/runtime-main.1648873c.js",
+    "runtime-main.js.map": "/react-practice/static/js/runtime-main.1648873c.js.map",
     "static/css/2.37c51860.chunk.css": "/react-practice/static/css/2.37c51860.chunk.css",
-    "static/js/2.0c53e812.chunk.js": "/react-practice/static/js/2.0c53e812.chunk.js",
-    "static/js/2.0c53e812.chunk.js.map": "/react-practice/static/js/2.0c53e812.chunk.js.map",
-    "static/js/3.beeae451.chunk.js": "/react-practice/static/js/3.beeae451.chunk.js",
-    "static/js/3.beeae451.chunk.js.map": "/react-practice/static/js/3.beeae451.chunk.js.map",
+    "static/js/2.abc9270b.chunk.js": "/react-practice/static/js/2.abc9270b.chunk.js",
+    "static/js/2.abc9270b.chunk.js.map": "/react-practice/static/js/2.abc9270b.chunk.js.map",
+    "static/js/3.f5d403dc.chunk.js": "/react-practice/static/js/3.f5d403dc.chunk.js",
+    "static/js/3.f5d403dc.chunk.js.map": "/react-practice/static/js/3.f5d403dc.chunk.js.map",
     "index.html": "/react-practice/index.html",
     "static/css/2.37c51860.chunk.css.map": "/react-practice/static/css/2.37c51860.chunk.css.map",
-    "static/css/main.63abde7c.chunk.css.map": "/react-practice/static/css/main.63abde7c.chunk.css.map",
-    "static/js/2.0c53e812.chunk.js.LICENSE.txt": "/react-practice/static/js/2.0c53e812.chunk.js.LICENSE.txt",
-    "static/media/bootstrap-icons.css": "/react-practice/static/media/bootstrap-icons.dfd0ea12.woff2",
-    "static/media/logo.6ce24c58.svg": "/react-practice/static/media/logo.6ce24c58.svg"
+    "static/css/main.aeeafd57.chunk.css.map": "/react-practice/static/css/main.aeeafd57.chunk.css.map",
+    "static/js/2.abc9270b.chunk.js.LICENSE.txt": "/react-practice/static/js/2.abc9270b.chunk.js.LICENSE.txt",
+    "static/media/bootstrap-icons.css": "/react-practice/static/media/bootstrap-icons.dfd0ea12.woff2"
   },
   "entrypoints": [
-    "static/js/runtime-main.06de5216.js",
+    "static/js/runtime-main.1648873c.js",
     "static/css/2.37c51860.chunk.css",
-    "static/js/2.0c53e812.chunk.js",
-    "static/css/main.63abde7c.chunk.css",
-    "static/js/main.0021ebf5.chunk.js"
+    "static/js/2.abc9270b.chunk.js",
+    "static/css/main.aeeafd57.chunk.css",
+    "static/js/main.9ab18c4b.chunk.js"
   ]
 }
