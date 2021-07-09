@@ -1,4 +1,8 @@
 
+.dropDown{
+    text-decoration: none;
+    color:black;
+}
 
 .bi-list-nested{
     font-size:x-large;
@@ -17,34 +21,24 @@
     left: 0;
     background-color: black;
     overflow-x: hidden;
+    overflow-y: hidden;
     transition: 0.5s;
     padding-top: 60px;
+    white-space: nowrap;
     
 }
 
-.dropDown-content i{
+.closebtn{
     color:white;
     padding-left: 200px;
 }
 
-.dropDown-content i:hover{
+.closebtn:hover{
     color:grey;
     transition: 0.3s;
 }
 
 
-.dropDown-content a{
-    padding: 8px 8px 8px 82px;
-    text-decoration: none;
-    font-size: 25px;
-    display: block;
-    transition: 0.3s;
-    color:white;
-}
-
-.dropDown-content > a:hover{
-    color: grey;
-}
 
 
 

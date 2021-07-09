@@ -1,24 +1,23 @@
 import React, { useState } from "react";
 import './Header.css';
 import "bootstrap-icons/font/bootstrap-icons.css";
+import SidebarContent from "./SidebarContent";
 
 function Header(){
-
   const [widths, setwidth] = useState(0);
+  const menuConent = ["Home", "About Me", "nth", "Contect"]
+  
 
     return (
       <div className="header">
 
         <div class="dropDown-content" style={{width:widths}}>
-          <i class="bi bi-x-lg" onClick={() => setwidth(widths-250)} ></i>
-          <a href="#">Test1</a>
-          <a href="#">Test2</a>
-          <a href="#">Test3</a>
-          <a href="#">Test4</a>
+          <a href="#" className="closebtn"><i class="bi bi-x-lg"  onClick={() => setwidth(widths-250)} ></i></a>
+          <SidebarContent content={menuConent}/>
         </div>
 
         <div className="dropDown" onClick={ () => setwidth(widths+250)}>
-          <i className="bi bi-list-nested"> Click Me </i>
+          <a href="#" className="dropDown"><i className="bi bi-list-nested"></i></a>
         </div>
         
       </div>  
