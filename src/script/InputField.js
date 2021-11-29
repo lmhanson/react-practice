@@ -3,11 +3,6 @@ import DoList from './DoList.js';
 
 export default class InputField extends Component {
 
-    constructor(props){
-        super(props);
-        this.deleteOne = this.deleteOne.bind(this);
-    }
-
     state = {
         msg : '',
         input: '',
@@ -36,7 +31,7 @@ export default class InputField extends Component {
         });
     }
 
-    deleteOne(index_){
+    deleteOne = (index_) => {
         var list_ = this.state.list.slice();
         list_ = list_.filter( (ele, index) => index !== index_);
         this.setState({

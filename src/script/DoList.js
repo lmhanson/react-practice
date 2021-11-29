@@ -1,12 +1,8 @@
 import { Component } from 'react';
 
 export default class DoList extends Component {
-    constructor(props){
-        super(props)
-        this.deleteItself = this.deleteItself.bind(this);
-    }
 
-    deleteItself(index){
+    deleteItself = (index) => {
         this.props.cleanOneLi(index);
     }
     
