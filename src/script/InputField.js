@@ -1,56 +1,43 @@
-import { Component } from 'react';
+import { useState } from 'react';
 import DoList from './DoList.js';
 
-export default class InputField extends Component {
+export default function InputField(prop) {
+    const [input, setUserInput] = useState('');
+    const [list, setList] = useState([]);
 
-    state = {
-        msg : '',
-        input: '',
-        list : [],    
+    window.onload = function() {
+        if(!prop.checkCookie()) {
+            console.log('No Cookie woooooooo !');
+            window.location.href = '/';
+        };
+    };
+
+    function userInputChange(e){
+        setUserInput({input : e.target.value});
     }
 
-    userInputChange(e){
-        this.setState({
-            input : e.target.value
-        });
-    }
-
-    confirmButton = () => {
-        if(!this.state.input || this.state.input.indexOf(' ') === 0 || !document.getElementById('input').value) return;
-        var inputArray = this.state.list.slice();
-        inputArray.push(<li key={this.state.input}>{this.state.input}</li>);
-        this.setState({
-            list : inputArray
-        });
+    function confirmButton() {
+        if(!input || Object.values(input).indexOf(' ') === 0 || !document.getElementById('input').value) return;
+        setList(prevItems  => [...prevItems , <li key={Object.values(input)[0]}>{Object.values(input)[0]}</li>]);
         document.getElementById('input').value = '';
     };
 
-    cleanButton = (e) => {
-        this.setState({
-            list : []
-        });
+    function cleanButton() {
+        setList([]);
     }
 
-    deleteOne = (index_) => {
-        var list_ = this.state.list.slice();
-        list_ = list_.filter( (ele, index) => index !== index_);
-        this.setState({
-            list : list_
-        });
+    const deleteOne = (index_) => {
+        setList(list.filter( (ele, index) => index !== index_) );
     }
 
-
-  render(){
     return (
-      <div className="input-field">
+        <div className="input-field">
             <p>Please type your work for today</p>
-            <input id="input" type="text" onChange={ (e) => this.userInputChange(e) } ></input>
-            <button onClick={this.confirmButton}> confirm </button>
-            <button onClick={this.cleanButton}> Clean All Work </button>
-            <DoList msg={this.state.list} cleanOneLi={this.deleteOne} />
-      </div>
-      
+            <input id="input" type="text" onChange={ (e) => userInputChange(e) } ></input>
+            <button onClick={confirmButton}> confirm </button>
+            <button onClick={cleanButton}> Clean All Work </button>
+            <DoList msg={list} cleanOneLi={deleteOne} />
+        </div>
+        
     )
-  }
-  
 }
