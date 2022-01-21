@@ -1,0 +1,13 @@
+.item-table {
+    display: flex;
+    width: auto;
+}
+.item-table li {
+    display: flex;
+    margin-top: 1%;
+    padding-right: 2%;
+}
+
+.delete-btn {
+    margin-left: 1em;
+}

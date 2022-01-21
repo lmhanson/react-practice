@@ -1,0 +1,29 @@
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: linear-gradient(to top right, rgb(140, 207, 252), rgb(140, 207, 252) 60%);
+}
+
+input {
+    margin: 0.75%;
+}
+
+button {
+    width: 10em;
+    height: 2em;
+    background-color: rgb(93, 179, 253);
+    border-color: rgb(93, 179, 253);
+    border-radius: 10em;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+}
+
+.error-msg {
+    margin-bottom: 1%;
+    color: red;
+}

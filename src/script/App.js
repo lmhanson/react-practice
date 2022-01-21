@@ -1,12 +1,12 @@
-import { React, useState } from 'react';
+import { React } from 'react';
 import { BrowserRouter as Router, Routes , Route } from "react-router-dom";
-import { useCookies, removeCookie } from 'react-cookie';
+import { useCookies } from 'react-cookie';
 import '../../src/style/App.css';
 import InputField from './InputField.js';
 import LoginPage from './LoginPage.js';
 
 export default function App() {
-  const [cookies, setCookie] = useCookies(['user']);
+  const [cookies, setCookie, removeCookie] = useCookies(['user']);
 
   const createCookie = (inputUserName, inputUserpw) => {
     if(checkCookie()) return;
@@ -19,7 +19,7 @@ export default function App() {
   }
 
   function deleteCookie() {
-      removeCookie('auth-cookie');
+    removeCookie('auth-cookie');
   }
 
   return (
@@ -27,7 +27,7 @@ export default function App() {
       <Router>
         <Routes>
           <Route path={"/"} element={ <LoginPage createCookie={createCookie} checkCookie={checkCookie}/> }/>
-          <Route path={"/home"} element={ <InputField checkCookie={checkCookie} /> }/>
+          <Route path={"/home"} element={ <InputField checkCookie={checkCookie} deleteCookie={deleteCookie}/> }/>
         </Routes> 
       </Router>
     </div>
