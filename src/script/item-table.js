@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { useState } from 'react';
 import '../../src/style/item-table.css';
 
@@ -25,22 +24,18 @@ export default function ItemTable(prop) {
         setEditingWeekday(false);
     }
 
-    useEffect( () => {
-        console.log(prop.title,changedText);
-    });
-
     return (
         <div className="item-table">
             <li onDoubleClick={ () => setEditingWeekday(true) }>{
                     editingWeekday ? (
-                        <select id = "dropdown" value={ changedWeekday }  onChange={ (e) => { handleWeekdaySelected(e.target.value) }} >
-                            {
-                                prop.weekdays.map( ele => {
-                                    return <option key={ele}>{ele}</option>
-                                } )
-                            }
-                        </select>
-                    ) : (<p>{ changedWeekday }</p>)
+                                    <select id = "dropdown" value={ changedWeekday }  onChange={ (e) => { handleWeekdaySelected(e.target.value) }} >
+                                        {
+                                            prop.weekdays.map( ele => {
+                                                return <option key={ele}>{ele}</option>
+                                            } )
+                                        }
+                                    </select>
+                                ) : (<p>{ changedWeekday }</p>)
                 }
             </li>
             <li onDoubleClick={ () => setEditing(true) }>

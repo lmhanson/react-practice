@@ -37,10 +37,11 @@ export default function InputField(prop) {
         if(e.key === 'Enter') { confirmButton(); }
     }
 
-    const deleteOne = (index_) => {
+    function deleteOne(index_) {
         setList(list.filter( ( (ele, index) => {
             return index !== index_;
         } ) ) );
+        console.log(list);
     }
 
     function cleanButton() {
@@ -82,9 +83,8 @@ export default function InputField(prop) {
             <ul>
                 {
                     list.map( (ele, index) => {
-                        console.log('this is render =====>', list, ele);
                         return (
-                            <ItemTable key={ele.title + index} index={index} weekday={ ele.weekdays } title={ele.title} weekdays={ weekdays } deleteOne={deleteOne} updateList={ updateList }></ItemTable>
+                            <ItemTable key={ele.title + ele.weekdays + index} index={index} weekday={ ele.weekdays } title={ele.title} weekdays={ weekdays } deleteOne={deleteOne} updateList={ updateList }></ItemTable>
                         );
                     })
                 }
