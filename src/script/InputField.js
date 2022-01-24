@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ItemTable from './item-table.js';
 
@@ -18,6 +18,10 @@ export default function InputField(prop) {
         };
     };
 
+    useEffect( () => {
+        
+    });
+
     function confirmButton() {
         if(!input || input.indexOf(' ') === 0 || !document.getElementById('input').value) { 
             setUserInput(''); 
@@ -33,8 +37,10 @@ export default function InputField(prop) {
         if(e.key === 'Enter') { confirmButton(); }
     }
 
-    const deleteOne = (title) => {
-        setList(list.filter( ele => ele.title !== title) );
+    const deleteOne = (index_) => {
+        setList(list.filter( ( (ele, index) => {
+            return index !== index_;
+        } ) ) );
     }
 
     function cleanButton() {
@@ -44,9 +50,10 @@ export default function InputField(prop) {
     function updateList (weekday,title, index_) {
         list.map( (ele, index) => {
             if(index_ === index) {
-                if(title !== ele.title) ele.title = title;
-                if(weekday !== ele.weekday) ele.weekday = weekday;
+                if(title !== ele.title) return ele.title = title;
+                if(weekday !== ele.weekday) return ele.weekday = weekday;
             }
+            return null;
         } );
     }
 
@@ -66,7 +73,7 @@ export default function InputField(prop) {
             <select id = "dropdown" onChange={ (e) => setday(e.target.value) }>
                 {
                     weekdays.map( ele => {
-                        return <option key={ ele } value={ele}>{ele}</option>
+                        return <option key={ ele }>{ele}</option>
                     } )
                 }
             </select>
@@ -75,8 +82,9 @@ export default function InputField(prop) {
             <ul>
                 {
                     list.map( (ele, index) => {
+                        console.log('this is render =====>', list, ele);
                         return (
-                            <ItemTable key={index} index={index} title={ele.title} weekday={ ele.weekdays } weekdays={ weekdays } deleteOne={deleteOne} updateList={ updateList }></ItemTable>
+                            <ItemTable key={ele.title + index} index={index} weekday={ ele.weekdays } title={ele.title} weekdays={ weekdays } deleteOne={deleteOne} updateList={ updateList }></ItemTable>
                         );
                     })
                 }

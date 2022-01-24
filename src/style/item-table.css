@@ -3,11 +3,15 @@
     width: auto;
 }
 .item-table li {
-    display: flex;
+    display: list-item;
     margin-top: 1%;
     padding-right: 2%;
 }
 
+.item-table li:nth-child(2) {
+    display: unset;
+}
+
 .delete-btn {
-    margin-left: 1em;
+    margin: 1em;
 }
